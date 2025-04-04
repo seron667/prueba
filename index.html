@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Imagenes</title>
+    <style>
+    body{
+        background: rgb(1, 74, 71); 
+        background: linear-gradient(90deg, rgb(0, 22, 36) 0%, rgb(9, 
+        101, 121) 35%, rgba(0, 213, 255, 0.675) 100%); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    img{
+        height: 250px;
+        width: 150px;
+    }
+    
+    .container{
+    width: 100px;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: gallery 20s linear infinite;
+    cursor: pointer;
+    }
+    
+    .container span{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(250px);
+    -webkit-box-reflect: below 2.5 liner-gradient(transparent,transparent, rgba(3,3,30.2));
+    }
+    
+    .container span img{
+    position: absolute;
+    border-radius: 10px;
+    border: 6px ridge #120505;
+    }
+    
+    @keyframes gallery {
+        0%{
+            transform: perspective (1000px) rotateY(0deg);
+        }
+        100%{
+            transform: perspective(1000px) rotateY(360deg);
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <span style="--i:1"><img src="img/1.jpg" alt=""></span>
+        <span style="--i:2"><img src="img/2.png" alt=""></span>
+        <span style="--i:3"><img src="img/3.jpg" alt=""></span>
+        <span style="--i:4"><img src="img/4.png" alt=""></span>
+        <span style="--i:5"><img src="img/5.png" alt=""></span>
+        <span style="--i:6"><img src="img/6.png" alt=""></span>
+        <span style="--i:7"><img src="img/7.png" alt=""></span>
+        <span style="--i:8"><img src="img/8.png" alt=""></span>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece - 3D Gallery</title>
+    <style>
+        body{
+            background: rgb(1, 74, 71); 
+            background: linear-gradient(90deg, rgb(0, 22, 36) 0%, rgb(9, 101, 121) 35%, rgba(0, 213, 255, 0.675) 100%); 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #002e4d, #0099ff);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            background: red;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+        .container{
+            width: 100px;
+            height: 250px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: gallery 20s linear infinite;
+            cursor: pointer;
+        }
+        .container span{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i)*45deg)) translateZ(250px);
+        }
+        .container span img{
+            position: absolute;
+            border-radius: 10px;
+            border: 6px ridge #120505;
+            height: 250px;
+            width: 200px;
+        }
+        @keyframes gallery {
+            0% { transform: perspective(1000px) rotateY(0deg); }
+            100% { transform: perspective(1000px) rotateY(360deg); }
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position:absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>ONE PIECE</header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Personajes</a>
+        <a href="#">Videos</a>
+        <a href="#">Historia</a>
+        <a href="#">Contact</a>
+    </nav>
+    
+    <div class="main">
+        <div class="container">
+            <span style="--i:1"><img src="C:\Users\luisf\Desktop\ONE PIECE\img\luffy.jpg" alt=""></span>
+            <span style="--i:2"><img src="img/2.png" alt=""></span>
+            <span style="--i:3"><img src="img/3.jpg" alt=""></span>
+            <span style="--i:4"><img src="img/4.png" alt=""></span>
+            <span style="--i:5"><img src="img/5.png" alt=""></span>
+            <span style="--i:6"><img src="img/6.png" alt=""></span>
+            <span style="--i:7"><img src="img/7.png" alt=""></span>
+            <span style="--i:8"><img src="img/8.png" alt=""></span>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; Luis Fernando Zeron Diaz
+    </footer>
+</body>
+</html>
